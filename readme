@@ -1,0 +1,34 @@
+Hello and thank you for downloading nview, and double thanks if you are actually reading it inside the program.
+This is designed as a very basic text viewer so that eople just learning C can both learn the code and a library
+so that they can write interesting programs perhaps based on this source code.
+
+The program is always used like this.
+
+./nview <filename> <colour>
+
+the colour codes are these:
+a - aqua/cyan
+b - blue
+g - green
+r - red
+p - purple/magenta
+y - yellow
+w - white
+
+NOTE: you may open a file without defining a colour(default is green) but not vice versa(this could probably be
+implemented in less the five minutes but to be honest I like to limit this collection to a few hours each and one
+a day)
+
+To compile on *nix operating systems you need one past Unix System V (mid 1980s) with NCurses, although removing the n from ncurses
+would make the compilation possible with regular curses on older unix systems and on windows 9X+ with PDcurses.
+
+To compile on Linux and similar *nix platforms simply run the makefile through GNU make and you will have your executable.
+
+If you are running windows, change the part that says '-lncurses' to '-lpdcurses'(provided you have the libraryinstalled) and then run it through
+mingw-make and you will have a working executable provided you have pdcurses.dll in the folder or you make it statically linked
+
+On older *nix and early home computers with support for the curses library change '-lncurses' to '-lcurses' and It will work.
+
+thanks for at least having a look at this, and don't forget to make the window reasonably large otherwise you won't see the whole document
+
+Giga raptor
