@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	{
 
 		char dat;
-		dat = decide_scheme(argv[2]);
+		dat = decide_scheme(argv[2]);//generates text colour based on the command-line args
 		init(dat);
 	}
 	else
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	if(argv[1])
 	{
 
-		openfile(argv[1]);
+		openfile(argv[1]);//speaks for itself, see the subroutine
 	}
 	else
 	{
