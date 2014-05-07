@@ -13,7 +13,7 @@ int init(char colorscheme)
 	cbreak();
 	start_color();
 
-	if(colorscheme == 'b')
+	if(colorscheme == 'b')//for some reason the switch statement continually bugged out so I use ifs and it works fine
 		{
 		init_pair(1, COLOR_BLUE, COLOR_BLACK);
 		}
@@ -57,7 +57,7 @@ void deinit()
 void openfile(char *filename)
 {
 	FILE *opened = fopen(filename, "r");
-	char *file = malloc(sizeof(char) * MAXSIZE);
+	char *file = malloc(sizeof(char) * MAXSIZE);//mallocs the size of the screen to hold the loaded data
 	if(!opened)
 	{
 		attron(COLOR_PAIR(1));
@@ -73,7 +73,7 @@ void openfile(char *filename)
 	attron(A_BOLD);
 	while(1 == 1)
 	{
-		selectchar = fgetc(opened);
+		selectchar = fgetc(opened);//just gets all the character as fscanf doesn't like ASCII chars 20, 10, or 14
 		if(filecount > MAXSIZE + 1)
 		{
 			printw("Your file is too big for ncat, try again when we implement scrolling, %d bytes",filecount );
@@ -115,7 +115,7 @@ void openfile(char *filename)
 
 char decide_scheme(char *inp)
 {
-	if(strstr(inp,"a") || strstr(inp,"A"))
+	if(strstr(inp,"a") || strstr(inp,"A")) //same case as with the init()
 	{
 		return 'a';
 	}
